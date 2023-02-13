@@ -8,16 +8,22 @@ on: [push, workflow_dispatch]
 jobs:
   build_artifact:
     runs-on: ubuntu-latest
+    environment: docker
     steps:
       - 
         name: Build Python Project
         uses: pybuilder/build@master
-      -
-        name: Upload Python Artifact
-        uses: actions/upload-artifact@v3
+      - 
+        name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          name: sampleservice
-          path: /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl
+          password: ${{ secrets.PYPI_API_TOKEN }}
+      # -
+      #   name: Upload Python Artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: sampleservice
+      #     path: /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl
   docker:
     needs: build_artifact
     runs-on: ubuntu-latest
