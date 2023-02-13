@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp-deployment
+  labels:
+    app: flaskapp-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: flaskapp-pod
+      labels:
+        app: flaskapp-pod
+    spec:
+      containers:
+        - name: flaskimage
+          image: flask:latest
+          imagePullPolicy: Never
+  selector:
+    matchLabels:
+      app: flaskapp-pod
