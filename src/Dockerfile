@@ -3,8 +3,8 @@ FROM python:3.9
 WORKDIR /usr/src/app
 
 #COPY src/main/python/helloWorld.py ./
-COPY ../target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl ./
-
+# COPY ../target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl ./
+COPY "{{defaultContext}}/target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl" ./
 #COPY startup.sh ./
 
 #RUN python -m venv envflask
