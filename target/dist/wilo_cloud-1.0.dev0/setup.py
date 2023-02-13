@@ -21,7 +21,7 @@ class install(_install):
 if __name__ == '__main__':
     setup(
         name = 'wilo_cloud',
-        version = '2.0.dev0',
+        version = '1.0.dev0',
         description = '',
         long_description = 'wilo_cloud',
         long_description_content_type = None,
