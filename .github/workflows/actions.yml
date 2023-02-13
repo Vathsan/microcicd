@@ -1,7 +1,4 @@
 name: GitHub Actions Demo
-
-#run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-
 on: [push, workflow_dispatch]
 jobs:
   build_artifact:
@@ -20,7 +17,7 @@ jobs:
             TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
             TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
           run: |
-            cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-2.0.0/dist/
+            cd /home/runner/work/microcicd/microcicd/target/dist/*/dist/
             pip install setuptools wheel twine
             twine upload --repository testpypi *
   docker:
@@ -43,11 +40,6 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-      -  
-        name: Download Python Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: sampleservice
       -
         name: Build and push
         uses: docker/build-push-action@v4

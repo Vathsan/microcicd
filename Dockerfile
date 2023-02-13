@@ -3,7 +3,6 @@ FROM python:3.9
 WORKDIR /usr/src/app
 
 #COPY src/main/python/helloWorld.py ./
-COPY target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl ./
 
 #COPY startup.sh ./
 
@@ -12,7 +11,7 @@ COPY target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl .
 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir flask
-RUN pip install wilo_cloud-2.0.0.whl
+RUN pip install -i https://test.pypi.org/simple/wilo-cloud==3.0.0
 
 #RUN chmod +x startup.sh
 
