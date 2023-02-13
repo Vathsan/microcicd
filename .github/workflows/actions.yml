@@ -68,6 +68,7 @@ jobs:
           openshift_token: ${{ secrets.OPENSHIFT_PASSWORD }}
           # Disables SSL cert checking.
           insecure_skip_tls_verify: true
+      - name: Deploy k8 configs
         run: |
           oc create -f deployment.yaml
           oc create -f service.yaml
