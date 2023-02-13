@@ -22,9 +22,9 @@ jobs:
             TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
             TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
           run: |
-            cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/
+            cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-2.0.dev0/dist/
             pip install setuptools wheel twine
-            twine upload --repository testpypi dist/*
+            twine upload --repository testpypi *
 
       # pip install setuptools wheel twine
       # python setup.py sdist bdist_wheel
