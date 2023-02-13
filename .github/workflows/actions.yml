@@ -21,7 +21,7 @@ jobs:
             pip install setuptools wheel twine
             twine upload --repository testpypi *
   docker:
-    needs: build_artifact
+    # needs: build_artifact
     runs-on: ubuntu-latest
     environment: docker
     steps:
