@@ -24,18 +24,18 @@ writing namespace_packages to wilo_cloud.egg-info/namespace_packages.txt
 writing top-level names to wilo_cloud.egg-info/top_level.txt
 reading manifest file 'wilo_cloud.egg-info/SOURCES.txt'
 writing manifest file 'wilo_cloud.egg-info/SOURCES.txt'
-Copying wilo_cloud.egg-info to build/bdist.linux-x86_64/wheel/wilo_cloud-1.0.dev0-py3.8.egg-info
+Copying wilo_cloud.egg-info to build/bdist.linux-x86_64/wheel/wilo_cloud-0.1.14-py3.8.egg-info
 running install_scripts
-creating build/bdist.linux-x86_64/wheel/wilo_cloud-1.0.dev0.dist-info/WHEEL
-creating 'dist/wilo_cloud-1.0.dev0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+creating build/bdist.linux-x86_64/wheel/wilo_cloud-0.1.14.dist-info/WHEEL
+creating 'dist/wilo_cloud-0.1.14-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
 adding '__main__.py'
 adding 'helloWorld.py'
-adding 'wilo_cloud-1.0.dev0.dist-info/METADATA'
-adding 'wilo_cloud-1.0.dev0.dist-info/WHEEL'
-adding 'wilo_cloud-1.0.dev0.dist-info/namespace_packages.txt'
-adding 'wilo_cloud-1.0.dev0.dist-info/top_level.txt'
-adding 'wilo_cloud-1.0.dev0.dist-info/zip-safe'
-adding 'wilo_cloud-1.0.dev0.dist-info/RECORD'
+adding 'wilo_cloud-0.1.14.dist-info/METADATA'
+adding 'wilo_cloud-0.1.14.dist-info/WHEEL'
+adding 'wilo_cloud-0.1.14.dist-info/namespace_packages.txt'
+adding 'wilo_cloud-0.1.14.dist-info/top_level.txt'
+adding 'wilo_cloud-0.1.14.dist-info/zip-safe'
+adding 'wilo_cloud-0.1.14.dist-info/RECORD'
 removing build/bdist.linux-x86_64/wheel
 /home/srivathsan/Documents/git/microcicd/.pybuilder/plugins/cpython-3.8.16.final.0/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
   warnings.warn(

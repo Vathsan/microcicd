@@ -3,8 +3,6 @@ name: GitHub Actions Demo
 #run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on: [push, workflow_dispatch]
-  # branches:
-  #     - 'main'
 jobs:
   build_artifact:
     runs-on: ubuntu-latest
@@ -22,23 +20,9 @@ jobs:
             TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
             TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
           run: |
-            cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/
+            cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-2.0.0/dist/
             pip install setuptools wheel twine
             twine upload --repository testpypi *
-
-      # pip install setuptools wheel twine
-      # python setup.py sdist bdist_wheel
-      # - 
-      #   name: Publish a Python distribution to PyPI
-      #   uses: pypa/gh-action-pypi-publish@release/v1
-      #   with:
-      #     password: ${{ secrets.PYPI_API_TOKEN }}
-      # -
-      #   name: Upload Python Artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: sampleservice
-      #     path: /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/wilo_cloud-1.0.dev0-py3-none-any.whl
   docker:
     needs: build_artifact
     runs-on: ubuntu-latest
@@ -68,8 +52,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: . 
-          #"{{defaultContext}}:src"
-          # file: ./Dockerfile
+          context: .
           push: true
           tags: svathsan/flaskcicd:latest

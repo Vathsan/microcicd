@@ -1,8 +1,8 @@
 Checking 
-/home/srivathsan/Documents/git/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/wi
-lo_cloud-1.0.dev0-py3-none-any.whl: [33mPASSED with warnings[0m
+/home/srivathsan/Documents/git/microcicd/target/dist/wilo_cloud-0.1.14/dist/wilo
+_cloud-0.1.14-py3-none-any.whl: [33mPASSED with warnings[0m
 [33mWARNING [0m `long_description_content_type` missing. defaulting to `text/x-rst`.   
 Checking 
-/home/srivathsan/Documents/git/microcicd/target/dist/wilo_cloud-1.0.dev0/dist/wi
-lo_cloud-1.0.dev0.tar.gz: [33mPASSED with warnings[0m
+/home/srivathsan/Documents/git/microcicd/target/dist/wilo_cloud-0.1.14/dist/wilo
+_cloud-0.1.14.tar.gz: [33mPASSED with warnings[0m
 [33mWARNING [0m `long_description_content_type` missing. defaulting to `text/x-rst`.   

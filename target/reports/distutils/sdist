@@ -15,19 +15,19 @@ writing manifest file 'wilo_cloud.egg-info/SOURCES.txt'
 warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
 
 running check
-creating wilo_cloud-1.0.dev0
-creating wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying files to wilo_cloud-1.0.dev0...
-copying __main__.py -> wilo_cloud-1.0.dev0
-copying helloWorld.py -> wilo_cloud-1.0.dev0
-copying setup.py -> wilo_cloud-1.0.dev0
-copying wilo_cloud.egg-info/PKG-INFO -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying wilo_cloud.egg-info/SOURCES.txt -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying wilo_cloud.egg-info/dependency_links.txt -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying wilo_cloud.egg-info/namespace_packages.txt -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying wilo_cloud.egg-info/top_level.txt -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-copying wilo_cloud.egg-info/zip-safe -> wilo_cloud-1.0.dev0/wilo_cloud.egg-info
-Writing wilo_cloud-1.0.dev0/setup.cfg
+creating wilo_cloud-0.1.14
+creating wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying files to wilo_cloud-0.1.14...
+copying __main__.py -> wilo_cloud-0.1.14
+copying helloWorld.py -> wilo_cloud-0.1.14
+copying setup.py -> wilo_cloud-0.1.14
+copying wilo_cloud.egg-info/PKG-INFO -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying wilo_cloud.egg-info/SOURCES.txt -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying wilo_cloud.egg-info/dependency_links.txt -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying wilo_cloud.egg-info/namespace_packages.txt -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying wilo_cloud.egg-info/top_level.txt -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+copying wilo_cloud.egg-info/zip-safe -> wilo_cloud-0.1.14/wilo_cloud.egg-info
+Writing wilo_cloud-0.1.14/setup.cfg
 creating dist
 Creating tar archive
-removing 'wilo_cloud-1.0.dev0' (and everything under it)
+removing 'wilo_cloud-0.1.14' (and everything under it)
