@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: docker
     steps:
-      # - 
-      #   name: Build Python Project
-      #   uses: pybuilder/build@master
+      - 
+        name: Build Python Project
+        uses: pybuilder/build@master
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
