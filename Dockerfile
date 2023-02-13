@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir flask
-RUN pip install -i https://test.pypi.org/simple/wilo-cloud==3.0.0
+RUN pip install -i https://test.pypi.org/simple/ wilo-cloud==3.0.0
 
 #RUN chmod +x startup.sh
 
