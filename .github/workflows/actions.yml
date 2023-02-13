@@ -6,6 +6,7 @@ on: [push]
   # branches:
   #     - 'main'
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: pybuilder/build@master
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pybuilder/build@master
