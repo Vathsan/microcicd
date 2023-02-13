@@ -32,4 +32,4 @@ jobs:
           context: "{{defaultContext}}:src"
           # file: ./Dockerfile
           push: true
-          tags: vathsan/flaskcicd:latest
+          tags: svathsan/flaskcicd:latest
