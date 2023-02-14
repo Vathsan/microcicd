@@ -72,6 +72,7 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
+          context: .
           args: create -f flask_deployment.yaml
 
 #    environment: openshift
