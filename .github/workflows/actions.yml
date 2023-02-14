@@ -54,21 +54,41 @@ jobs:
   deploy:
     name: Login and Deploy to Openshift
     runs-on: ubuntu-latest
-    environment: openshift
-    steps:        
-      - name: Authenticate and set context
-        uses: redhat-actions/oc-login@v1
-        env:
-          OPENSHIFT_USER: vathsan
-          OPENSHIFT_NAMESPACE: vathsan
+    environment: aws
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          # URL to your OpenShift cluster.
-          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          # Authentication Token. Can use username and password instead.
-          openshift_token: ${{ secrets.OPENSHIFT_PASSWORD }}
-          # Disables SSL cert checking.
-          insecure_skip_tls_verify: true
-      - name: Deploy k8 configs
-        run: |
-          oc create -f deployment.yaml
-          oc create -f service.yaml
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: verify deployment
+        uses: kodermax/kubectl-aws-eks@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          args: rollout status deployment/my-app
+
+#    environment: openshift
+#    steps:
+#      - name: Authenticate and set context
+#        uses: redhat-actions/oc-login@v1
+#        env:
+#          OPENSHIFT_USER: vathsan
+#          OPENSHIFT_NAMESPACE: vathsan
+#        with:
+#          # URL to your OpenShift cluster.
+#          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
+#          # Authentication Token. Can use username and password instead.
+#          openshift_token: ${{ secrets.OPENSHIFT_PASSWORD }}
+#          # Disables SSL cert checking.
+#          insecure_skip_tls_verify: true
+#      - name: Deploy k8 configs
+#        run: |
+#          oc create -f deployment.yaml
+#          oc create -f service.yaml
