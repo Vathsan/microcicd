@@ -52,7 +52,7 @@ jobs:
   #         tags: svathsan/flaskcicd:latest
 
   deploy:
-    name: Login and Deploy to Openshift
+    name: Login and Deploy to AWS EKS
     runs-on: ubuntu-latest
     environment: aws
     steps:
@@ -63,9 +63,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+#      - name: Login to Amazon ECR
+#        id: login-ecr
+#        uses: aws-actions/amazon-ecr-login@v1
 
       - name: verify deployment
         uses: kodermax/kubectl-aws-eks@master
