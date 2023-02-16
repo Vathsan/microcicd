@@ -16,12 +16,13 @@ jobs:
              TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
            run: |
              ls /home/runner/work/microcicd/microcicd/target/dist/
-             cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-4.0.0/dist/
+             cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-5.0.0/dist/
              pip install setuptools wheel twine
              twine upload --repository testpypi *
 
   docker:
     name: Build and Push Docker Image
+    needs: python
     runs-on: ubuntu-latest
     environment: docker
     steps:
@@ -51,6 +52,7 @@ jobs:
   deploy:
     name: Login and Deploy to AWS EKS
     runs-on: ubuntu-latest
+    needs: docker
     environment: aws
     steps:
       - name: Configure AWS credentials
