@@ -52,7 +52,7 @@ jobs:
   deploy:
     name: Login and Deploy to AWS EKS
     runs-on: ubuntu-latest
-    needs: docker
+#    needs: docker
     environment: aws
     steps:
       - name: Configure AWS credentials
