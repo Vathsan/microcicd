@@ -1,28 +1,28 @@
 name: GitHub Actions Demo
 on: [push, workflow_dispatch]
 jobs:
-  python:
-     name: Build and Push Python Microservice
-     runs-on: ubuntu-latest
-     environment: docker
-     steps:
-         -
-           name: Build Python Project
-           uses: pybuilder/build@master
-
-         - name: Publish
-           env:
-             TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-             TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-           run: |
-             ls /home/runner/work/microcicd/microcicd/target/dist/
-             cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-5.0.0/dist/
-             pip install setuptools wheel twine
-             twine upload --repository testpypi *
+#  python:
+#     name: Build and Push Python Microservice
+#     runs-on: ubuntu-latest
+#     environment: docker
+#     steps:
+#         -
+#           name: Build Python Project
+#           uses: pybuilder/build@master
+#
+#         - name: Publish
+#           env:
+#             TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+#             TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+#           run: |
+#             ls /home/runner/work/microcicd/microcicd/target/dist/
+#             cd /home/runner/work/microcicd/microcicd/target/dist/wilo_cloud-5.0.0/dist/
+#             pip install setuptools wheel twine
+#             twine upload --repository testpypi *
 
   docker:
     name: Build and Push Docker Image
-    needs: python
+#    needs: python
     runs-on: ubuntu-latest
     environment: docker
     steps:
@@ -47,7 +47,7 @@ jobs:
        with:
          context: .
          push: true
-         tags: svathsan/flaskcicd:latest
+         tags: svathsan/flaskcicd:5.0.0
 
   deploy:
     name: Login and Deploy to AWS EKS
@@ -68,4 +68,4 @@ jobs:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
           context: .
-          args: set image deployment/flaskapp-deployment flaskimage=svathsan/flaskcicd:latest
+          args: set image deployment/flaskapp-deployment flaskimage=svathsan/flaskcicd:5.0.0
