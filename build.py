@@ -7,7 +7,7 @@ use_plugin("python.distutils")
 
 
 name = "wilo_cloud"
-version = "3.0.0"
+version = "4.0.0"
 default_task = "publish"
 
 
