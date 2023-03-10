@@ -5,17 +5,19 @@ metadata:
   labels:
     app: myapp-deployment
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
-      name: myapp-replicaset
+      name: myapp-pod
       labels:
-        app: myapp-replicaset
+        app: myapp-pod
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: hospital-service
+          image: svathsan/hospital_service:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
   selector:
     matchLabels:
-      app: myapp-deployment
-      
+      app: myapp-pod
