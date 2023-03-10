@@ -20,7 +20,7 @@ doctors = [{
 },
     {
     "id": 4,
-    "name": "Don Maccament",
+    "name": "Don Maccament Vathsan",
     "hospital": "Rosemary Hospital Center",
     "speciality": "Surgery"
 },
