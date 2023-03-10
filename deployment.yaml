@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hospital-service
-          image: svathsan/hospital_service:1.0.0
+          image: svathsan/hospital_service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
