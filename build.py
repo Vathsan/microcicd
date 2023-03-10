@@ -7,7 +7,7 @@ use_plugin("python.distutils")
 
 
 name = "hospitalService_microcicd"
-version = "6.0.0"
+version = "8.0.0"
 default_task = "publish"
 
 

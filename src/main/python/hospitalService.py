@@ -4,7 +4,7 @@ doctors = [{
     "id": 1,
     "name": "Jeremy Willey",
     "hospital": "Green Country Community Hospital",
-    "speciality": "Surgery"
+    "speciality": "Paediatric"
 },
     {
     "id": 2,
@@ -20,7 +20,7 @@ doctors = [{
 },
     {
     "id": 4,
-    "name": "Don Maccament Vathsan Arun",
+    "name": "Don Maccament",
     "hospital": "Rosemary Hospital Center",
     "speciality": "Surgery"
 },
